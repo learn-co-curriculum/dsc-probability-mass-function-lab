@@ -1,16 +1,18 @@
 
-# Class Size Paradox - pmf Lab
+# The Probability Mass Function (PMF) - Lab
 
 The class size paradox describes the apparent contradictory findings where a total allocation of resources is fixed. Differences result in the perception of events based on whether we consider events from the point of view of the typical event or the typical person participating in an event. Such varying distributions can have important consequences for data analysis. pmfs can help resolve some of these situations as we shall see below 
 
-## SWBATS
+## Objectives
+
+You will be able to:
 
 * Understand and explain the class size paradox 
 * Use pmfs to visualize actual and biased observations
 * Calculate mean from pmfs to identify the expected value
 
 
-### The Problem 
+## The Problem 
 ![](https://www.insidehighered.com/sites/default/server_files/styles/large/public/media/iStock_000021583873XSmall.jpg?itok=u_y_yItN)
 
 At an educational establishment, the expected student-to-teacher ratio is 10:1. But randomly interviewed students often feel that their average class size is much bigger than 10. There are two main reasons for such observations:
@@ -86,7 +88,7 @@ np.array(pmf).sum()
 
 
 
-### Calculate Mean / Expected Value (E)
+## Calculate Mean / Expected Value (E)
 
 We can now calculate the average of **Expected** value for this distribution.
 
@@ -128,7 +130,7 @@ plt.title ("A Probability Mass Function");
 ![png](index_files/index_12_0.png)
 
 
-### Random Student Survey
+## Random Student Survey
 
 Now if we survey a random group of students about size of their classes, and compute the mean, according to the paradox, we would observe that the average class is much bigger than 23.7. Howcome !!! Let's see this in action below:
 
@@ -244,7 +246,7 @@ plt.show()
 
 Here is the key, We can see for smaller class sizes, the probability of coming across a students is lower than actual probability. Also, in the larger classes, the the probability of coming across a student is much higher than actual probability. And hence this appears to an observer as a Paradox. But its not a paradox for us anymore .. We have nailed it. 
 
-### Level Up (Optional)
+## Level Up (Optional)
 
 It is also possible to reverse this operation. Imagine you want to find the distribution of class sizes at a campus, but you can’t get reliable data from the campus manager. You can choose a random sample of students and ask how many students are in their classes.
 
