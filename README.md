@@ -56,7 +56,10 @@ Following the approach seen in the previous lesson, calculate the pmf by normali
 
 
 ```python
+import numpy as np 
+import collections
 sum_class = np.array([8, 8, 14, 4, 6, 12, 8, 3, 2]).sum()
+counter = collections.Counter(size_and_count)
 pmf = []
 sum_class = np.array(counter.values()).sum
 for key,val in counter.items():
@@ -143,7 +146,7 @@ The result is a new Pmf that represents the biased distribution.
 
 ```python
 biased = []
-for s, p in zip(size,pmf):
+for s, p in zip(sizes,pmf):
     biased.append(s*p)
 
 biased_sum = np.array(biased).sum()
