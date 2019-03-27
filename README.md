@@ -1,7 +1,8 @@
 
 # The Probability Mass Function (PMF) - Lab
 
-The class size paradox describes the apparent contradictory findings where a total allocation of resources is fixed. Differences result in the perception of events based on whether we consider events from the point of view of the typical event or the typical person participating in an event. Such varying distributions can have important consequences for data analysis. pmfs can help resolve some of these situations as we shall see below 
+The class size paradox describes the apparent contradictory findings where a total allocation of resources is fixed. 
+The idea behind this paradox is that there is a difference in how events are actually distributed and how events are perceived to be distributed. These types of divergence can have important consequences for data analysis. PMFs can help resolve some of these situations as you'll learn below.
 
 ## Objectives
 
@@ -15,9 +16,9 @@ You will be able to:
 ## The Problem 
 ![](https://www.insidehighered.com/sites/default/server_files/styles/large/public/media/iStock_000021583873XSmall.jpg?itok=u_y_yItN)
 
-At an educational establishment, the expected student-to-teacher ratio is 10:1. But randomly interviewed students often feel that their average class size is much bigger than 10. There are two main reasons for such observations:
+At an educational establishment, the expected student-to-teacher ratio is 10:1. But randomly interviewed students often feel that their average class size is much bigger than 10. There are two main reasons for this:
 
-1. Students typically engage into 4 – 5 classes at any given time, but teachers only teach 1 or 2 classes.
+1. Students typically engage into 4 - 5 classes at any given time, but teachers only teach 1 or 2 classes.
 2. An obvious fact, that number of students in a small class is small, and the number of students in a large class is large.
 
 Due to the second fact, while randomly taking feedback from students, we would surely come across more students from larger classes.
@@ -41,10 +42,10 @@ Suppose that a college offers 65 classes in a term. We can start with a followin
 
 If the campus manager is inquired about the average average class size, he would perform the following tasks:
 
-1. Construct a pmf from given data
-2. Compute the mean from calculated pmf
+1. Construct a PMG from given data
+2. Compute the mean from calculated PMF
 
-So let's follow the management approach first and see what mean we get from our pmf. Here is a `size_and_count` dictionary to get you started. Calculate the pmf from this data as we have seen before. For keys, we have used the average for each class size i.e. for size 5 - 9, we use 7 as an average.
+Let's follow the management approach first and see what expected value we get from our PMF. Here is a `size_and_count` dictionary to get you started. Calculate the pmf from this data as we have seen before. To make it slightly more straightforward, we have averaged our class sizes for each class, i.e. for size 5 - 9, we use 7 as an average.
 
 
 ```python
@@ -52,7 +53,7 @@ size_and_count = { 7: 8, 12: 8, 17: 14, 22: 4,
           27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }
 ```
 
-Following the approach seen in the previous lesson, calculate the pmf by normalizing each size. 
+Following the approach seen in the previous lesson, calculate the PMG by normalizing each size. 
 
 
 ```python
@@ -91,15 +92,15 @@ np.array(pmf).sum()
 
 
 
-## Calculate Mean / Expected Value (E)
+## Calculate the Mean of Expected Value $E(X)$
 
-We can now calculate the average of **Expected** value for this distribution.
+We can now calculate the average of **Expected Value** for this distribution.
 
->The mean **μ** ( or expected value E,**E [X]** ) of a random variable X is the sum of the weighted possible values for X; weighted, that is, by their respective probabilities. If S is the set of all possible values for X, then the formula for the mean is:
+>The mean $\mu$ or expected value **E(X)** of a random variable $X$ is the sum of the possible values for $X$ weighted by their respective probabilities.
 
-### μ = ∑ x ∈ S  x ⋅ p (x)
+$$ E(X) = \mu = \sum_i p(x_i)x_i$$
 
-In simple terms, we must multiply each element in the sizes list to their probability of occurrence. Let's do this in a for loop below:
+In simple terms, you have to multiply each element in the sizes list to their probability of occurrence. You can do this using a loop.
 
 
 ```python
@@ -118,15 +119,16 @@ mu
 
 
 
-So the campus manager's answer would be 23.7 , as the average class size. And this makes a lot of sense too looking at our calculation above. We can plot a pmf function based on above findings for inspections. 
+So according to the campus manager, the average class size is 27. This makes a lot of sense looking at the calculation above. We can plot a PMF function based on above findings for inspections. 
 
 
 ```python
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 
-plt.stem(counter.keys(), pmf, '-', 'go', 'r-');
-plt.title ("A Probability Mass Function");
+plt.figure(figsize=(8,5))
+plt.bar(counter.keys(), pmf);
+plt.title ("The Probability Mass Function");
 ```
 
 
@@ -135,13 +137,14 @@ plt.title ("A Probability Mass Function");
 
 ## Random Student Survey
 
-Now if we survey a random group of students about size of their classes, and compute the mean, according to the paradox, we would observe that the average class is much bigger than 23.7. Howcome !!! Let's see this in action below:
+Now we performed a survey on a random group of students about size of their classes, and compute the mean, according to the paradox, we observed that the average class is much bigger than 23.7. How did this happen? Let's see this in action below:
 
-First, let's compute a distribution as a likely observation by students, where the probability associated with each class size is “biased” by the number of students in the class. Perform following tasks to introduce this biasness. 
+First, let's compute a distribution as a likely observation by students, where the probability associated with each class size is “biased” by the number of students in the class. Perform following tasks to introduce this bias. 
 
-* For each class size x, multiply the class probability by x, the number of students who observe that class size. 
+* For each class size $x$, multiply the class probability by $x$, the number of students who observe that particular class size
 * Get the sum for biased class size sum
-The result is a new Pmf that represents the biased distribution.
+
+The result is a new PMF that represents the biased distribution.
 
 
 ```python
@@ -161,8 +164,8 @@ biased, biased_sum
 
 
 
-This is great so far, we can now normalize the new biased list with the sum of its values, just like we did before. 
-* Normalize the biased list and calculate the new pmf
+You can now normalize the new biased list with the sum of its values, just like you did before. 
+- Normalize the biased list and calculate the new PMF
 
 
 ```python
@@ -181,7 +184,7 @@ sizes, pmf2
 
 
 
-Right so we can see that probabilities values in this pmf are different than our original pmf. So just like before, we can calulcate the MU, average or expected value.  
+You can see that probabilities values in this PMF are different than our original pmf. Just like before, you can calulcate the expected value $\mu$.  
 
 
 ```python
@@ -189,7 +192,6 @@ mu_biased =0
 for a,b in zip (sizes,pmf2):
     mu_biased += a*b
 mu_biased
-    
 ```
 
 
@@ -199,23 +201,23 @@ mu_biased
 
 
 
-#### Here comes the paradox 
+## Here comes the paradox 
 
-Here we see it, the average or expected value of biased results become much higher than the actual values. In some situations, such a paradox could be mind boggling. As an extra measure , we can inspect both pmfs side by side in a visual manner to see the differences. 
+Here we see it, the average or expected value of biased results comes out much higher than the actual values. In some situations, a paradox like this can be mind boggling. As an extra measure, you can inspect both PMFs side by side visually to see the differences. 
 
 * Plot a figure with two axes
-* Show pmf1 and pmf2 side by side. 
+* Show PMF 1 and PMF 2 side by side
 
 
 ```python
 # Plot pmfs side by side
-new_figure = plt.figure(figsize=(12,5))
+new_figure = plt.figure(figsize=(14,5.5))
 
 ax = new_figure.add_subplot(121)
 ax2 = new_figure.add_subplot(122)
 
-ax.stem(counter.keys(), pmf, '-', 'go', 'r-');
-ax2.stem(counter.keys(), pmf2, '-', 'ro', 'r-');
+ax.bar(counter.keys(), pmf);
+ax2.bar(counter.keys(), pmf2, color="yellow");
 
 ax.set_title ("Probability Mass Function - Actual");
 ax2.set_title ("Probability Mass Function - Observed");
@@ -224,40 +226,41 @@ plt.show()
 ```
 
 
-![png](index_files/index_21_0.png)
+![png](index_files/index_20_0.png)
 
 
-So our results tell us that in the biased distribution there are fewer small classes and more large classes. 
+Your results tell you that in the biased distribution there are fewer small classes and more large classes. 
 
 The mean of the biased distribution is 29.1, almost 25% higher than the actual mean.
 
-To to an even more direct comparison, plot these pmfs on top of each other and change the marker style for differentiation. 
+To to an even more direct comparison, plot these pmfs on top of each other and change the parameter `alpha` so you can see both distributions well
 
 
 ```python
 # Plot pmfs overlapping
-plt.stem(counter.keys(), pmf, '-', 'go', 'r-', label= 'Actual' );
-plt.stem(counter.keys(), pmf2, '-', 'ro', 'r-', label= 'Observed' );
+plt.figure(figsize=(8,5))
+plt.bar(counter.keys(), pmf, label= 'Actual', alpha = 0.7 );
+plt.bar(counter.keys(), pmf2, color= "yellow", alpha = 0.7, label= 'Observed');
 plt.title ("Probability Mass Function - Class size paradox");
 plt.legend()
 plt.show()
 ```
 
 
-![png](index_files/index_23_0.png)
+![png](index_files/index_22_0.png)
 
 
-Here is the key, We can see for smaller class sizes, the probability of coming across a students is lower than actual probability. Also, in the larger classes, the the probability of coming across a student is much higher than actual probability. And hence this appears to an observer as a Paradox. But its not a paradox for us anymore .. We have nailed it. 
+Here is the key. For smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
 
 ## Level Up (Optional)
 
-It is also possible to reverse this operation. Imagine you want to find the distribution of class sizes at a campus, but you can’t get reliable data from the campus manager. You can choose a random sample of students and ask how many students are in their classes.
+It is possible to reverse this operation. Imagine you want to find the distribution of class sizes at a campus, but you can’t get reliable data from the campus manager. You can choose a random sample of students and ask how many students are in their classes.
 
-The result would be biased for the reasons that we have seen in this lesson. You need to write an **un-bias** function that divides each probability by x instead of multiplying.
-
-Give it a go ...
+The result would be biased for the reasons that we have seen in this lesson. You need to write an **un-bias** function that divides each probability by $x$ instead of multiplying. Give this a try yourself!
 
 
 
 ## Summary 
-In this lesson we looked at a common paradox termed as "Class Size Paradox" which deals with difference in observation by different people based on their circumstances. This phenomenon is not limited to class sizes, but may also work with other similar scenarios. In the bog data domain, this can become really complicated duw to large number of involved individuals and huge variations in the probabilities of their observations, based on their settings. 
+In this lesson we looked at a common paradox called a "Class Size Paradox", which deals with differences in observation by different people based on their circumstances. 
+
+Note that this phenomenon is not limited to class sizes, but may also work with other similar scenarios. This paradox can can become really complicated due to large number of involved individuals and huge variations in the probabilities of their observations, based on their settings. 
