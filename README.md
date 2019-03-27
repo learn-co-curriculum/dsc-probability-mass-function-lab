@@ -1,7 +1,7 @@
 
 # The Probability Mass Function (PMF) - Lab
 
-The class size paradox describes the apparent contradictory findings where a total allocation of resources is fixed. 
+The class size paradox describes apparent contradictory findings where a total allocation of resources is fixed. 
 The idea behind this paradox is that there is a difference in how events are actually distributed and how events are perceived to be distributed. These types of divergence can have important consequences for data analysis. PMFs can help resolve some of these situations as you'll learn below.
 
 ## Objectives
@@ -9,8 +9,8 @@ The idea behind this paradox is that there is a difference in how events are act
 You will be able to:
 
 * Understand and explain the class size paradox 
-* Use pmfs to visualize actual and biased observations
-* Calculate mean from pmfs to identify the expected value
+* Use PMFs to visualize actual and biased observations
+* Calculate mean from PMFs to identify the expected value
 
 
 ## The Problem 
@@ -18,14 +18,14 @@ You will be able to:
 
 At an educational establishment, the expected student-to-teacher ratio is 10:1. But randomly interviewed students often feel that their average class size is much bigger than 10. There are two main reasons for this:
 
-1. Students typically engage into 4 - 5 classes at any given time, but teachers only teach 1 or 2 classes.
-2. An obvious fact, that number of students in a small class is small, and the number of students in a large class is large.
+1. Students typically engage in 4 - 5 classes at any given time, but teachers only teach 1 or 2 classes.
+2. An obvious fact, that the number of students in a small class is small, and the number of students in a large class is large.
 
 Due to the second fact, while randomly taking feedback from students, we would surely come across more students from larger classes.
 
 Let's work through a set of data to re-create and analyze this paradox. 
 
-Suppose that a college offers 65 classes in a term. We can start with a following distribution of sizes and counts:
+Suppose that a college offers 65 classes in a term. We can start with the following distribution of sizes and counts:
 
 ```
  size      count
@@ -40,7 +40,7 @@ Suppose that a college offers 65 classes in a term. We can start with a followin
 45-49          2
 ```
 
-If the campus manager is inquired about the average average class size, he would perform the following tasks:
+If the campus manager is inquired about the average class size, he would perform the following tasks:
 
 1. Construct a PMG from given data
 2. Compute the mean from calculated PMF
@@ -119,7 +119,7 @@ mu
 
 
 
-So according to the campus manager, the average class size is 27. This makes a lot of sense looking at the calculation above. We can plot a PMF function based on above findings for inspections. 
+So according to the campus manager, the average class size is 27. This makes a lot of sense looking at the calculation above. We can plot a PMF function based on our findings for inspections. 
 
 
 ```python
@@ -203,7 +203,7 @@ mu_biased
 
 ## Here comes the paradox 
 
-Here we see it, the average or expected value of biased results comes out much higher than the actual values. In some situations, a paradox like this can be mind boggling. As an extra measure, you can inspect both PMFs side by side visually to see the differences. 
+Here we see it, the average or expected value of biased results comes out much higher than the actual values. In some situations, a paradox like this can be mind-boggling. As an extra measure, you can inspect both PMFs side by side visually to see the differences. 
 
 * Plot a figure with two axes
 * Show PMF 1 and PMF 2 side by side
@@ -263,4 +263,4 @@ The result would be biased for the reasons that we have seen in this lesson. You
 ## Summary 
 In this lesson we looked at a common paradox called a "Class Size Paradox", which deals with differences in observation by different people based on their circumstances. 
 
-Note that this phenomenon is not limited to class sizes, but may also work with other similar scenarios. This paradox can can become really complicated due to large number of involved individuals and huge variations in the probabilities of their observations, based on their settings. 
+Note that this phenomenon is not limited to class sizes, but may also work with other similar scenarios. This paradox can become really complicated due to the large number of involved individuals and huge variations in the probabilities of their observations, based on their settings. 
