@@ -92,7 +92,7 @@ np.array(pmf).sum()
 
 
 
-## Calculate the Mean of Expected Value $E(X)$
+## Calculate the Mean or Expected Value $E(X)$
 
 We can now calculate the average of **Expected Value** for this distribution.
 
@@ -206,7 +206,7 @@ mu_biased
 Here we see it, the average or expected value of biased results comes out much higher than the actual values. In some situations, a paradox like this can be mind-boggling. As an extra measure, you can inspect both PMFs side by side visually to see the differences. 
 
 * Plot a figure with two axes
-* Show PMF 1 and PMF 2 side by side
+* Show pmf1 and pmf2 side by side
 
 
 ```python
@@ -252,7 +252,7 @@ plt.show()
 
 Here is the key. For smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
 
-## Level Up (Optional)
+## Level Up - Optional
 
 It is possible to reverse this operation. Imagine you want to find the distribution of class sizes at a campus, but you can’t get reliable data from the campus manager. You can choose a random sample of students and ask how many students are in their classes.
 
