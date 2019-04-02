@@ -214,12 +214,6 @@ To to an even more direct comparison, plot these pmfs on top of each other and c
 
 Here is the key. For smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
 
-## Level Up - Optional
-
-It is possible to reverse this operation. Imagine you want to find the distribution of class sizes at a campus, but you can’t get reliable data from the campus manager. You can choose a random sample of students and ask how many students are in their classes.
-
-The result would be biased for the reasons that we have seen in this lesson. You need to write an **un-bias** function that divides each probability by $x$ instead of multiplying. Give this a try yourself!
-
 ## Summary 
 In this lesson we looked at a common paradox called a "Class Size Paradox", which deals with differences in observation by different people based on their circumstances. 
 
