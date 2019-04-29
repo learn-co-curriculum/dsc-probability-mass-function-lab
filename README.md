@@ -66,7 +66,8 @@ sizes, pmf
 
 
 
-    (None, None)
+    ([17, 22, 27, 32, 37, 42, 47, 52, 57],
+     [0.135, 0.135, 0.243, 0.081, 0.108, 0.135, 0.068, 0.041, 0.054])
 
 
 
@@ -77,6 +78,13 @@ As an additional check, these probability values must sum to 1. Let's check for 
 # Uncomment the line below, the output should be 1
 #np.array(pmf).sum()
 ```
+
+
+
+
+    1.0
+
+
 
 ## Calculate the Mean or Expected Value $E(X)$
 
@@ -98,6 +106,13 @@ mu
 # 32.49000000000001
 ```
 
+
+
+
+    32.49000000000001
+
+
+
 So according to the campus manager, the average class size is 27. This makes a lot of sense looking at the calculation above. We can plot a PMF function based on our findings for inspections. 
 
 
@@ -106,12 +121,7 @@ So according to the campus manager, the average class size is 27. This makes a l
 ```
 
 
-```python
-
-```
-
-
-![png](index_files/index_10_0.png)
+![png](index_files/index_9_0.png)
 
 
 ## Random Student Survey
@@ -140,7 +150,7 @@ biased, biased_sum
 
 
 
-    ([], None)
+    ([2.295, 2.97, 6.561, 2.592, 3.996, 5.67, 3.196, 2.132, 3.078], 32.49)
 
 
 
@@ -161,8 +171,8 @@ sizes, pmf2
 
 
 
-    ([7, 12, 17, 22, 27, 32, 37, 42, 47],
-     [0.036, 0.062, 0.154, 0.058, 0.105, 0.25, 0.192, 0.082, 0.061])
+    ([17, 22, 27, 32, 37, 42, 47, 52, 57],
+     [0.071, 0.091, 0.202, 0.08, 0.123, 0.175, 0.098, 0.066, 0.095])
 
 
 
@@ -175,6 +185,13 @@ mu_biased = None
 mu_biased
 # 36.577000000000005
 ```
+
+
+
+
+    36.577000000000005
+
+
 
 ## Here comes the paradox 
 
@@ -190,7 +207,7 @@ Here we see it, the average or expected value of biased results comes out much h
 ```
 
 
-![png](index_files/index_18_0.png)
+![png](index_files/index_17_0.png)
 
 
 Your results tell you that in the biased distribution there are fewer small classes and more large classes. 
@@ -206,7 +223,7 @@ To to an even more direct comparison, plot these pmfs on top of each other and c
 ```
 
 
-![png](index_files/index_20_0.png)
+![png](index_files/index_19_0.png)
 
 
 Here is the key. For smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
