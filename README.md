@@ -113,7 +113,7 @@ So according to the campus manager, the average class size is 27. This makes a l
 ```
 
 
-![png](index_files/index_13_0.png)
+![png](index_files/index_10_0.png)
 
 
 ## Random Student Survey
@@ -193,7 +193,7 @@ Here we see it, the average or expected value of biased results comes out much h
 ```
 
 
-![png](index_files/index_21_0.png)
+![png](index_files/index_18_0.png)
 
 
 Your results tell you that in the biased distribution there are fewer small classes and more large classes. 
@@ -209,7 +209,7 @@ To to an even more direct comparison, plot these pmfs on top of each other and c
 ```
 
 
-![png](index_files/index_23_0.png)
+![png](index_files/index_20_0.png)
 
 
 Here is the key. For smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
