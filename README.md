@@ -14,43 +14,43 @@ You will be able to:
 
 
 ## The Problem 
-![](https://www.insidehighered.com/sites/default/server_files/styles/large/public/media/iStock_000021583873XSmall.jpg?itok=u_y_yItN)
 
-At an educational establishment, the expected student-to-teacher ratio is 10:1. But randomly interviewed students often feel that their average class size is much bigger than 10. There are two main reasons for this:
+At a university, the expected student-to-teacher ratio is 10:1. But randomly interviewed students often feel that their average class size is much bigger than 10. There are two main reasons for this:
 
-1. Students typically engage in 4 - 5 classes at any given time, but teachers only teach 1 or 2 classes.
-2. An obvious fact, that the number of students in a small class is small, and the number of students in a large class is large.
+1. Students typically take 4 - 5 classes at any given time, but teachers usually only teach 1 or 2 classes.
+2. The number of students in a small class is small, and the number of students in a large class is large.
 
-Due to the second fact, while randomly taking feedback from students, we would surely come across more students from larger classes.
+Due to the second fact, while randomly taking feedback from students (and sampling randomly), it is expected to come across _more_ students from larger classes.
 
-Let's work through a set of data to re-create and analyze this paradox. 
+Let's work through a set of data to recreate and analyze this paradox. 
 
-Suppose that a college offers 65 classes in a term. We can start with the following distribution of sizes and counts:
+Suppose that a college offers 74 classes in a term. We can start with the following distribution of sizes and counts:
 
-```
- size      count
- 5- 9          8
-10-14          8
-15-19         14
-20-24          4
-25-29          6
-30-34         12
-35-39          8
-40-44          3
-45-49          2
-```
+| Class size |  Class count |
+|--------|------|
+|15-19|	10|
+|20-24|	10|
+|25-29|	18|
+|30-34|	6|
+|35-39|	8|
+|40-44|	10|
+|45-49|	5|
+|50-54|	3|
+|55-59| 4|
 
 If the campus manager is inquired about the average class size, he would perform the following tasks:
 
 1. Construct a PMG from given data
 2. Compute the mean from calculated PMF
 
-Let's follow the management approach first and see what expected value we get from our PMF. Here is a `size_and_count` dictionary to get you started. Calculate the pmf from this data as we have seen before. To make it slightly more straightforward, we have averaged our class sizes for each class, i.e. for size 5 - 9, we use 7 as an average.
+Let's follow the management approach first and see what expected value we get from our PMF. Here is a `size_and_count` dictionary to get you started. Calculate the pmf from this data as we have seen before. To make it slightly more straightforward, we have averaged our class sizes for each class, i.e. for size 15 - 19, we use 17 as an average.
 
 
 ```python
-size_and_count = { 7: 8, 12: 8, 17: 14, 22: 4, 
-          27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }
+size_and_count = { 17: 10, 22: 10, 
+          27: 18, 32: 6, 37: 8, 42: 10, 47: 5, 52: 3, 57: 4 }
+
+import numpy as np
 ```
 
 Following the approach seen in the previous lesson, calculate the PMG by normalizing each size. 
@@ -59,12 +59,12 @@ Following the approach seen in the previous lesson, calculate the PMG by normali
 ```python
 import numpy as np 
 import collections
-sum_class = np.array([8, 8, 14, 4, 6, 12, 8, 3, 2]).sum()
+sum_class = np.array([10, 10, 18, 6, 8, 10, 5, 3, 4]).sum()
 counter = collections.Counter(size_and_count)
 pmf = []
 sum_class = np.array(counter.values()).sum
 for key,val in counter.items():
-    pmf.append(round(val/65, 3))
+    pmf.append(round(val/74, 3))
     
 sizes = list(counter.keys())
 sizes, pmf
@@ -73,8 +73,8 @@ sizes, pmf
 
 
 
-    ([7, 12, 17, 22, 27, 32, 37, 42, 47],
-     [0.123, 0.123, 0.215, 0.062, 0.092, 0.185, 0.123, 0.046, 0.031])
+    ([17, 22, 27, 32, 37, 42, 47, 52, 57],
+     [0.135, 0.135, 0.243, 0.081, 0.108, 0.135, 0.068, 0.041, 0.054])
 
 
 
@@ -115,7 +115,7 @@ mu
 
 
 
-    23.7
+    32.49000000000001
 
 
 
@@ -132,7 +132,7 @@ plt.title ("The Probability Mass Function");
 ```
 
 
-![png](index_files/index_12_0.png)
+![png](index_files/index_9_0.png)
 
 
 ## Random Student Survey
@@ -159,8 +159,7 @@ biased, biased_sum
 
 
 
-    ([0.861, 1.476, 3.655, 1.3639999999999999, 2.484, 5.92, 4.551, 1.932, 1.457],
-     23.700000000000003)
+    ([2.295, 2.97, 6.561, 2.592, 3.996, 5.67, 3.196, 2.132, 3.078], 32.49)
 
 
 
@@ -179,8 +178,8 @@ sizes, pmf2
 
 
 
-    ([7, 12, 17, 22, 27, 32, 37, 42, 47],
-     [0.036, 0.062, 0.154, 0.058, 0.105, 0.25, 0.192, 0.082, 0.061])
+    ([17, 22, 27, 32, 37, 42, 47, 52, 57],
+     [0.071, 0.091, 0.202, 0.08, 0.123, 0.175, 0.098, 0.066, 0.095])
 
 
 
@@ -197,7 +196,7 @@ mu_biased
 
 
 
-    29.14
+    36.577000000000005
 
 
 
@@ -226,12 +225,12 @@ plt.show()
 ```
 
 
-![png](index_files/index_20_0.png)
+![png](index_files/index_17_0.png)
 
 
 Your results tell you that in the biased distribution there are fewer small classes and more large classes. 
 
-The mean of the biased distribution is 29.1, almost 25% higher than the actual mean.
+The mean of the biased distribution is 36.577, which is quite a bit higher than the actual mean (~31.5).
 
 To to an even more direct comparison, plot these pmfs on top of each other and change the parameter `alpha` so you can see both distributions well
 
@@ -247,7 +246,7 @@ plt.show()
 ```
 
 
-![png](index_files/index_22_0.png)
+![png](index_files/index_19_0.png)
 
 
 Here is the key. For smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
