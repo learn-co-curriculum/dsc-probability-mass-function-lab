@@ -40,7 +40,7 @@ Suppose that a college offers 74 classes in a term. We can start with the follow
 
 If the campus manager is inquired about the average class size, he would perform the following tasks:
 
-1. Construct a PMG from given data
+1. Construct a PMF from given data
 2. Compute the mean from calculated PMF
 
 Let's follow the management approach first and see what expected value we get from our PMF. Here is a `size_and_count` dictionary to get you started. Calculate the pmf from this data as we have seen before. To make it slightly more straightforward, we have averaged our class sizes for each class, i.e. for size 15 - 19, we use 17 as an average.
@@ -53,7 +53,7 @@ size_and_count = { 17: 10, 22: 10,
 import numpy as np
 ```
 
-Following the approach seen in the previous lesson, calculate the PMG by normalizing each size. 
+Following the approach seen in the previous lesson, calculate the PMF by normalizing each size. 
 
 
 ```python
