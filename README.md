@@ -50,7 +50,7 @@ Let's follow the management approach first and see what expected value we get fr
 size_and_count = { 17: 10, 22: 10, 27: 18, 32: 6, 37: 8, 42: 10, 47: 5, 52: 3, 57: 4 }
 ```
 
-Following the approach seen in the previous lesson, calculate the PMG by normalizing each size. 
+Following the approach seen in the previous lesson, calculate the PMF by normalizing each size. 
 
 
 ```python
@@ -177,8 +177,3 @@ Here is the key: For smaller class sizes, the probability of coming across a stu
 In this lesson we looked at a common paradox called the "class size paradox", which deals with differences in observation by different people based on their circumstances. 
 
 Note that this phenomenon is not just limited to class sizes. It applies to many scenarios where people are grouped together. This paradox can become really complicated due to the large number of individuals involved and the resulting variations in the probabilities of their observations which arise due to their settings. 
-
-
-```python
-
-```
