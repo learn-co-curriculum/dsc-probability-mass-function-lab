@@ -1,5 +1,5 @@
 
-##### The Probability Mass Function (PMF) - Lab
+# The Probability Mass Function (PMF) - Lab
 
 The class size paradox describes apparent contradictory findings where a total allocation of resources is fixed. 
 The idea behind this paradox is that there is a difference in how events are actually distributed and how events are perceived to be distributed. These types of divergence can have important consequences for data analysis. PMFs can help resolve some of these situations as you'll learn below.
@@ -134,7 +134,7 @@ plt.title ("The Probability Mass Function");
 ![png](index_files/index_9_0.png)
 
 
-##### Random Student Survey
+## Random Student Survey
 
 Next, we conduct a survey on a random group of students about their class sizes and then compute the mean. Paradoxically, we observed that the average class is bigger than 32.5. How did this happen? Let's see this in action below:
 
@@ -225,7 +225,7 @@ plt.show()
 ![png](index_files/index_17_0.png)
 
 
-## Your results tell you that in the biased distribution there are fewer small classes and more large classes. 
+Your results tell you that in the biased distribution there are fewer small classes and more large classes. 
 
 The mean of the biased distribution is 36.577, which is quite a bit higher than the actual mean (~32.5).
 
@@ -252,8 +252,3 @@ Here is the key: For smaller class sizes, the probability of coming across a stu
 In this lesson we looked at a common paradox called the "class size paradox", which deals with differences in observation by different people based on their circumstances. 
 
 Note that this phenomenon is not just limited to class sizes. It applies to many scenarios where people are grouped together. This paradox can become really complicated due to the large number of individuals involved and the resulting variations in the probabilities of their observations which arise due to their settings. 
-
-
-```python
-
-```
