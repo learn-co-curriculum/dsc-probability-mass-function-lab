@@ -72,20 +72,14 @@ sizes, pmf
 ```python
 # __SOLUTION__ 
 import numpy as np 
-import collections
-
-counter = collections.Counter(size_and_count)
 
 # Determine total number of classes
-sum_class = sum(counter.values())
-
-pmf = []
+sum_class = sum(size_and_count.values())
 
 # Divide each class size value by the total number of classes
-for key, val in counter.items():
-    pmf.append(round(val/sum_class, 3))
+pmf = [round(value/sum_class, 3) for value in size_and_count.values()]    
     
-sizes = list(counter.keys())
+sizes = list(size_and_count.keys())
 sizes, pmf
 ```
 
@@ -167,7 +161,7 @@ import matplotlib.pyplot as plt
 
 plt.style.use('ggplot')
 plt.figure(figsize=(8,5))
-plt.bar(counter.keys(), pmf);
+plt.bar(size_and_count.keys(), pmf);
 plt.title ("The Probability Mass Function");
 ```
 
@@ -294,8 +288,8 @@ new_figure = plt.figure(figsize=(14,5.5))
 ax = new_figure.add_subplot(121)
 ax2 = new_figure.add_subplot(122)
 
-ax.bar(counter.keys(), pmf);
-ax2.bar(counter.keys(), pmf2, color="yellow");
+ax.bar(size_and_count.keys(), pmf);
+ax2.bar(size_and_count.keys(), pmf2, color="yellow");
 
 ax.set_title ("Probability Mass Function - Actual");
 ax2.set_title ("Probability Mass Function - Observed");
@@ -324,8 +318,8 @@ For an even more direct comparison, plot these PMFs on top of each other and cha
 # __SOLUTION__ 
 # Plot pmfs overlapping
 plt.figure(figsize=(8,5))
-plt.bar(counter.keys(), pmf, label= 'Actual', alpha = 0.7 );
-plt.bar(counter.keys(), pmf2, color= "yellow", alpha = 0.7, label= 'Observed');
+plt.bar(size_and_count.keys(), pmf, label= 'Actual', alpha = 0.7 );
+plt.bar(size_and_count.keys(), pmf2, color= "yellow", alpha = 0.7, label= 'Observed');
 plt.title ("Probability Mass Function - Class size paradox");
 plt.legend()
 plt.show()
