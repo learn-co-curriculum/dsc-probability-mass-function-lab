@@ -74,7 +74,7 @@ sizes, pmf
 
 
 
-As an additional check, these probability values must sum to 1. Let's check for that
+As an additional check, these probability values must sum to 1. Let's check for that:
 
 
 ```python
@@ -96,7 +96,7 @@ We can now calculate the mean or **Expected Value** for this distribution.
 
 $$ E(X) = \mu = \sum_i p(x_i)x_i$$
 
-In simple terms, you have to multiply each element in the sizes list by their probability of occurrence then sum the resulting values. We can do this in one line of code using numpy broadcasting.
+In simple terms, you have to multiply each element in the sizes list by their probability of occurrence then sum the resulting values. We can do this in one line of code using NumPy broadcasting.
 
 
 ```python
@@ -240,9 +240,9 @@ plt.show()
 ![png](index_files/index_19_0.png)
 
 
-Here is the key: For smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
+Here is the key: for smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
 
 ## Summary 
-In this lesson we looked at a common paradox called the "class size paradox", which deals with differences in observation by different people based on their circumstances. 
+In this lesson, we looked at a common paradox called the "class size paradox", which deals with differences in observation by different people based on their circumstances. 
 
 Note that this phenomenon is not just limited to class sizes. It applies to many scenarios where people are grouped together. This paradox can become really complicated due to the large number of individuals involved and the resulting variations in the probabilities of their observations which arise due to their settings. 
