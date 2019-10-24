@@ -1,16 +1,16 @@
 
-# The Probability Mass Function (PMF) - Lab
+# The Probability Mass Function - Lab
 
 The class size paradox describes apparent contradictory findings where a total allocation of resources is fixed. 
-The idea behind this paradox is that there is a difference in how events are actually distributed and how events are perceived to be distributed. These types of divergence can have important consequences for data analysis. PMFs can help resolve some of these situations as you'll learn below.
+The idea behind this paradox is that there is a difference in how events are actually distributed and how events are perceived to be distributed. These types of divergence can have important consequences for data analysis. Probability mass functions (PMFs) can help resolve some of these situations, as you'll learn below.
 
 ## Objectives
 
 You will be able to:
 
-* Understand and explain the class size paradox 
-* Use PMFs to visualize actual and biased observations
-* Calculate mean from PMFs to identify the expected value
+* Explain the class size paradox
+* Create visualizations to visually compare actual and biased observations 
+* Calculate the mean from PMFs to identify the expected value
 
 
 ## The Problem 
@@ -150,7 +150,7 @@ Recall, we expected the average class size to be 32.5. Indeed, the calculation a
 
 
 ```python
-# Plot the pmf , it should look similar to the one shown below
+# Plot the pmf 
 ```
 
 
@@ -186,7 +186,6 @@ The result is a new PMF that represents the biased distribution.
 ```python
 biased = []
 
-
 biased_sum = None
 
 biased, biased_sum
@@ -198,6 +197,7 @@ biased, biased_sum
 ```python
 # __SOLUTION__ 
 biased = np.multiply(sizes, pmf)
+
 biased_sum = biased.sum()
 
 biased, biased_sum
@@ -216,8 +216,7 @@ You can now normalize the new biased list with the sum of its values, just like 
 
 ```python
 pmf2 = []
-
-    
+ 
 sizes, pmf2
 
 # ([17, 22, 27, 32, 37, 42, 47, 52, 57],
@@ -276,7 +275,6 @@ Here we see it, the average or expected value of biased results comes out much h
 
 ```python
 # Plot pmfs side by side
-
 ```
 
 
@@ -310,7 +308,6 @@ For an even more direct comparison, plot these PMFs on top of each other and cha
 
 ```python
 # Plot pmfs overlapping
-
 ```
 
 
