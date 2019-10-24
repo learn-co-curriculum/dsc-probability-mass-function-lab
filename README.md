@@ -1,16 +1,16 @@
 
-# The Probability Mass Function (PMF) - Lab
+# The Probability Mass Function - Lab
 
 The class size paradox describes apparent contradictory findings where a total allocation of resources is fixed. 
-The idea behind this paradox is that there is a difference in how events are actually distributed and how events are perceived to be distributed. These types of divergence can have important consequences for data analysis. PMFs can help resolve some of these situations as you'll learn below.
+The idea behind this paradox is that there is a difference in how events are actually distributed and how events are perceived to be distributed. These types of divergence can have important consequences for data analysis. Probability mass functions (PMFs) can help resolve some of these situations, as you'll learn below.
 
 ## Objectives
 
 You will be able to:
 
-* Understand and explain the class size paradox 
-* Use PMFs to visualize actual and biased observations
-* Calculate mean from PMFs to identify the expected value
+* Explain the class size paradox
+* Create visualizations to visually compare actual and biased observations 
+* Calculate the mean from PMFs to identify the expected value
 
 
 ## The Problem 
@@ -144,6 +144,7 @@ The result is a new PMF that represents the biased distribution.
 
 ```python
 biased = np.multiply(sizes, pmf)
+
 biased_sum = biased.sum()
 
 biased, biased_sum
