@@ -60,8 +60,13 @@ Following the approach seen in the previous lesson, calculate the PMF by normali
 
 
 ```python
+# Determine total number of classes
+sum_class = None
+
+# Divide each class size value by the total number of classes
+pmf = None   
+    
 sizes = None
-pmf = None
 sizes, pmf
 
 # ([17, 22, 27, 32, 37, 42, 47, 52, 57],
@@ -71,8 +76,6 @@ sizes, pmf
 
 ```python
 # __SOLUTION__ 
-import numpy as np 
-
 # Determine total number of classes
 sum_class = sum(size_and_count.values())
 
@@ -91,17 +94,20 @@ sizes, pmf
 
 
 
-As an additional check, these probability values must sum to 1. Let's check for that:
+As an additional check, these probability values must sum to 1. Let's check for that. Run the following cell: 
 
 
 ```python
-# Uncomment the line below, the output should be 1
-#np.array(pmf).sum()
+# The output should be 1
+import numpy as np 
+np.array(pmf).sum()
 ```
 
 
 ```python
 # __SOLUTION__ 
+# The output should be 1
+import numpy as np 
 np.array(pmf).sum()
 ```
 
@@ -126,7 +132,6 @@ In simple terms, you have to multiply each element in the sizes list by their pr
 ```python
 # Calculate the expected value (mu) using formula above
 mu = None
-
 mu 
 
 # 32.49
@@ -150,7 +155,13 @@ Recall, we expected the average class size to be 32.5. Indeed, the calculation a
 
 
 ```python
+import matplotlib.pyplot as plt
+%matplotlib inline
+plt.style.use('ggplot')
+plt.figure(figsize=(8,5))
+
 # Plot the pmf 
+
 ```
 
 
@@ -158,11 +169,12 @@ Recall, we expected the average class size to be 32.5. Indeed, the calculation a
 # __SOLUTION__ 
 import matplotlib.pyplot as plt
 %matplotlib inline
-
 plt.style.use('ggplot')
 plt.figure(figsize=(8,5))
+
+# Plot the pmf 
 plt.bar(size_and_count.keys(), pmf);
-plt.title ("The Probability Mass Function");
+plt.title("The Probability Mass Function");
 ```
 
 
@@ -184,13 +196,13 @@ The result is a new PMF that represents the biased distribution.
 
 
 ```python
-biased = []
+biased = None
 
 biased_sum = None
 
 biased, biased_sum
 
-# ([2.295, 2.97, 6.561, 2.592, 3.996, 5.67, 3.196, 2.132, 3.078], 32.49)
+# (array([2.295, 2.97 , 6.561, 2.592, 3.996, 5.67 , 3.196, 2.132, 3.078]), 32.49)
 ```
 
 
@@ -216,7 +228,8 @@ You can now normalize the new biased list with the sum of its values, just like 
 
 ```python
 pmf2 = []
- 
+
+
 sizes, pmf2
 
 # ([17, 22, 27, 32, 37, 42, 47, 52, 57],
@@ -246,8 +259,8 @@ You can see that probability values in this PMF are different than our original 
 
 ```python
 mu_biased = None
-
 mu_biased
+
 # 36.577
 ```
 
@@ -275,13 +288,16 @@ Here we see it, the average or expected value of biased results comes out much h
 
 ```python
 # Plot pmfs side by side
+new_figure = plt.figure(figsize=(14, 5.5))
+
+
 ```
 
 
 ```python
 # __SOLUTION__ 
 # Plot pmfs side by side
-new_figure = plt.figure(figsize=(14,5.5))
+new_figure = plt.figure(figsize=(14, 5.5))
 
 ax = new_figure.add_subplot(121)
 ax2 = new_figure.add_subplot(122)
@@ -308,13 +324,15 @@ For an even more direct comparison, plot these PMFs on top of each other and cha
 
 ```python
 # Plot pmfs overlapping
+plt.figure(figsize=(8, 5))
+
 ```
 
 
 ```python
 # __SOLUTION__ 
 # Plot pmfs overlapping
-plt.figure(figsize=(8,5))
+plt.figure(figsize=(8, 5))
 plt.bar(size_and_count.keys(), pmf, label= 'Actual', alpha = 0.7 );
 plt.bar(size_and_count.keys(), pmf2, color= "yellow", alpha = 0.7, label= 'Observed');
 plt.title ("Probability Mass Function - Class size paradox");
