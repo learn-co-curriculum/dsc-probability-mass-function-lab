@@ -54,8 +54,6 @@ Following the approach seen in the previous lesson, calculate the PMF by normali
 
 
 ```python
-import numpy as np 
-
 # Determine total number of classes
 sum_class = sum(size_and_count.values())
 
@@ -74,10 +72,12 @@ sizes, pmf
 
 
 
-As an additional check, these probability values must sum to 1. Let's check for that:
+As an additional check, these probability values must sum to 1. Let's check for that. Run the following cell: 
 
 
 ```python
+# The output should be 1
+import numpy as np 
 np.array(pmf).sum()
 ```
 
@@ -117,11 +117,12 @@ Recall, we expected the average class size to be 32.5. Indeed, the calculation a
 ```python
 import matplotlib.pyplot as plt
 %matplotlib inline
-
 plt.style.use('ggplot')
 plt.figure(figsize=(8,5))
+
+# Plot the pmf 
 plt.bar(size_and_count.keys(), pmf);
-plt.title ("The Probability Mass Function");
+plt.title("The Probability Mass Function");
 ```
 
 
@@ -202,7 +203,7 @@ Here we see it, the average or expected value of biased results comes out much h
 
 ```python
 # Plot pmfs side by side
-new_figure = plt.figure(figsize=(14,5.5))
+new_figure = plt.figure(figsize=(14, 5.5))
 
 ax = new_figure.add_subplot(121)
 ax2 = new_figure.add_subplot(122)
@@ -229,7 +230,7 @@ For an even more direct comparison, plot these PMFs on top of each other and cha
 
 ```python
 # Plot pmfs overlapping
-plt.figure(figsize=(8,5))
+plt.figure(figsize=(8, 5))
 plt.bar(size_and_count.keys(), pmf, label= 'Actual', alpha = 0.7 );
 plt.bar(size_and_count.keys(), pmf2, color= "yellow", alpha = 0.7, label= 'Observed');
 plt.title ("Probability Mass Function - Class size paradox");
