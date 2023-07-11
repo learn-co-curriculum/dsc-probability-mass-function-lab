@@ -81,7 +81,7 @@ actual_pmf = None
 # Display probabilities in a dataframe
 pmf_df = pd.concat([sizes, actual_pmf], axis=1)
 pmf_df.columns = ["Class Size", "Overall Probability"]
-pmf_df.style.hide_index()
+pmf_df.style.hide(axis='index')
 ```
 
 
@@ -102,7 +102,7 @@ actual_pmf = pd.Series([value/sum_class for value in size_and_count.values()])
 # Display probabilities in a dataframe
 pmf_df = pd.concat([sizes, actual_pmf], axis=1)
 pmf_df.columns = ["Class Size", "Overall Probability"]
-pmf_df.style.hide_index()
+pmf_df.style.hide(axis='index')
 ```
 
 
@@ -192,7 +192,9 @@ pmf_df.plot.bar(x="Class Size", y="Overall Probability");
 ```
 
 
+    
 ![png](index_files/index_11_0.png)
+    
 
 
 Let's also write the PMF as a Python function `p_actual`. Meaning, it takes in a given $x_i$ value (a class size) and returns the probability of that outcome from the management perspective.
@@ -509,7 +511,9 @@ ax = pmf_df.plot.bar(x="Class Size", y=["Overall Probability", "Perceived Probab
 ```
 
 
+    
 ![png](index_files/index_36_0.png)
+    
 
 
 Your results tell you that in the biased distribution there are fewer small classes and more large classes. 
@@ -558,7 +562,9 @@ pmf_df.plot.bar(
 ```
 
 
+    
 ![png](index_files/index_39_0.png)
+    
 
 
 Here is the key: for smaller class sizes, the probability of coming across a students is lower than the actual probability. For larger classes, the probability of coming across a student is much higher than actual probability. This explains why the paradox takes place!
