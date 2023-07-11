@@ -75,7 +75,7 @@ actual_pmf = None
 # Display probabilities in a dataframe
 pmf_df = pd.concat([sizes, actual_pmf], axis=1)
 pmf_df.columns = ["Class Size", "Overall Probability"]
-pmf_df.style.hide_index()
+pmf_df.style.hide(axis='index')
 ```
 
 As an additional check, these probability values must sum to 1. Let's check for that. Run the following cell: 
