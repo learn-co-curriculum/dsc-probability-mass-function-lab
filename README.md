@@ -66,7 +66,7 @@ We will also use this an an opportunity to practice using pandas, which has conv
 
 
 ```python
-import numpy as np
+import pandas as pd
 
 # Determine total number of classes (integer value)
 sum_class = None
